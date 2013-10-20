@@ -13,7 +13,7 @@
 using namespace std;
 #include <iostream>
 #include "Cartography.h"
-#include "TestCount.h"
+#include "B3409_tests.h"
 
 
 
@@ -44,7 +44,7 @@ int main() {
 	macarte.Add(205,12,"Test");
 	cout << "Ma cartography count : " << macarte.Count() << endl;
 
-	TestCount test;
+	B3409_tests test;
 	test.test1();
 	test.test2();
 	test.test3();
