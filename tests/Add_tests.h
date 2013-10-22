@@ -10,6 +10,8 @@ class Add_tests
 public:
 	Add_tests();
 	virtual ~Add_tests();
+	bool test0();
+	bool test0b();
 	bool test1();
 	bool test2();
 	bool test3();

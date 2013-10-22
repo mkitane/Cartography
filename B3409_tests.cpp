@@ -67,7 +67,20 @@ bool B3409_tests::test4() {
 	cout << "Test 4 failed" << endl;
 	return false;
 }
+bool B3409_tests::test4b() {
+	Cartography unecarte;
+	unecarte.Add(20,12,"Test");
+	unecarte.Add(21,12,"Test");
+	unecarte.Add(22,12,"Test");
+	unecarte.Add(23,12,"Test");
 
+	if(unecarte.Count("test") == 0) {
+		cout << "Test 4 pass" << endl;
+		return true;
+	}
+	cout << "Test 4 failed" << endl;
+	return false;
+}
 bool B3409_tests::test5() {
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");

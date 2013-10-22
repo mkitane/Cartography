@@ -11,6 +11,7 @@ public:
 	bool test2();
 	bool test3();
 	bool test4();
+	bool test4b();
 	bool test5();
 	bool test6();
 	bool test7();
