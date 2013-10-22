@@ -42,7 +42,7 @@ public:
 	long Count();
 	long Count(char* pszDMP);
 	long FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
-	void Display(Mesure m);  //pas sur du parametre
+	void Display();  //pas sur du parametre
 	char* GetData(float x, float y); // pas sur plutot :
 	//int GetData(float x, float y);
 

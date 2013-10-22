@@ -85,10 +85,11 @@ long Cartography::Count(char* pszDMP){
 }
 
 
-void Cartography::Display(Mesure m){
-	cout<< "Matiere " << m.description << " trouvee a la position : (" << m.x << "," << m.y << ")" << endl;
+void Cartography::Display(){
+	for(int i=0; i<longueur ;i++){
+		cout<< "Matiere " << tab[i].description << " trouvee a la position : (" << tab[i].x << "," << tab[i].y << ")" << endl;
+	}
 }
-
 char* Cartography::GetData(float x, float y){
 
 	for(int i = 0; i<longueur ; i++ ){
