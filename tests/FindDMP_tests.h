@@ -1,5 +1,6 @@
 #ifndef FINDDMP_TESTS_H_
 #define FINDDMP_TESTS_H_
+#include "../Cartography.h"
 
 class FindDMP_tests
 {

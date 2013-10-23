@@ -162,7 +162,5 @@ bool findDMPFaux6(){
 	}
 }
 
-}
-
 
 //FIND DMP NORMAL AVEC chiffre ngeatifs
