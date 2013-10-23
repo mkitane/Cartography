@@ -10,11 +10,13 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-using namespace std;
 #include <iostream>
+//------------------------------------------------------ Include personnel
 #include "Cartography.h"
 #include "B3409_tests.h"
-
+#include "tests/FindDMP_tests.h"
+#include "tests/Add_tests.h"
+using namespace std;
 
 
 
@@ -47,11 +49,26 @@ int main() {
 	B3409_tests test;
 	test.test1();
 	test.test2();
-	test.test3();
+	//test.test3();
 	test.test4();
 	test.test5();
 	test.test6();
 	test.test7();
 
+	FindDMP_tests dmp;
+	dmp.findDMPFaux6();
+	dmp.findDMPFauxNom();
+	dmp.findDMPFromCartoVide();
+	dmp.findDMPNormal();
+	dmp.findDMPNormal2();
+	dmp.findDMPNormal3();
+	dmp.findDMPNormal4();
+	dmp.findDMPNormal5();
+
+
+	Add_tests add;
+	add.test0();
+	add.test0b();
+	add.test1();
 	return 0;
 }

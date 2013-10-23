@@ -5,16 +5,15 @@
 class FindDMP_tests
 {
 public:
-	FindDMP_tests();
-	virtual ~FindDMP_tests();
-	bool test1();
-	bool test2();
-	bool test3();
-	bool test4();
-	bool test5();
-	bool test6();
-	bool test7();
-	bool test8();
+	bool findDMPFromCartoVide();
+	bool findDMPFauxNom();
+	bool findDMPNormal();
+	bool findDMPNormal2();
+	bool findDMPNormal3();
+	bool findDMPNormal4();
+	bool findDMPNormal5();
+	bool findDMPFaux6();
+
 };
 
 #endif /*FINDDMP_TESTS_H_*/

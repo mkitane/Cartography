@@ -1,13 +1,6 @@
 #include "Add_tests.h"
 
 
-Add_tests::Add_tests()
-{
-}
-
-Add_tests::~Add_tests()
-{
-}
 //Test en conditions normales
 bool Add_tests::test0(){
 	Cartography unecarte;

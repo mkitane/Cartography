@@ -42,18 +42,11 @@ public:
 	long Count();
 	long Count(char* pszDMP);
 	long FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
-	void Display();  //pas sur du parametre
-	char* GetData(float x, float y); // pas sur plutot :
-	//int GetData(float x, float y);
+	void Display();
+	char* GetData(float x, float y);
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Cartography & operator = ( const Cartography & unCartography );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
 
 //-------------------------------------------- Constructeurs - destructeur
     Cartography ( );
@@ -75,8 +68,8 @@ protected:
     bool compareStrings(char* firstString, char* secondString);
     int sizeOfString(char* string);
 //----------------------------------------------------- Attributs protégés
-    Mesure *tab ;
     int longueur;
+    Mesure *tab ;
 };
 
 //--------------------------- Autres définitions dépendantes de <Cartography>

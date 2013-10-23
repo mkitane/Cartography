@@ -5,8 +5,6 @@
 class B3409_tests
 {
 public:
-	B3409_tests();
-	virtual ~B3409_tests();
 	bool test1();
 	bool test2();
 	bool test3();

@@ -1,33 +1,31 @@
+
+#include <iostream>
 #include "FindDMP_tests.h"
 
-FindDMP_tests::FindDMP_tests()
-{
-}
-
-FindDMP_tests::~FindDMP_tests()
-{
-}
+using namespace std;
 
 //FIND DMP FROM CARTO VIDE
-bool findDMPFromCartoVide(){
+bool FindDMP_tests::findDMPFromCartoVide(){
 	Cartography c;
-	float fX;
-	float fY;
+	float fX = -1;
+	float fY = -1;
 
 	long int firstPos = 0;
 	c.FindDMP("SIO2",firstPos ,fX,fY);
 
-	if(fX || fY){
+	if(fX != -1 || fY != -1 ){
+		cout<<"test failed" << endl;
 		return false;
 	}else{
+		cout<<"test pass" << endl;
 		return true;
 	}
 }
 //FIND DMP FROM FAUX NOM
-bool findDMPFauxNom(){
+bool FindDMP_tests::findDMPFauxNom(){
 	Cartography c;
-	float fX;
-	float fY;
+	float fX = -1;
+	float fY = -1;
 
 
 	c.Add(2,3,"SIO2");
@@ -36,14 +34,17 @@ bool findDMPFauxNom(){
 
 	c.FindDMP("SsO2",0 ,fX,fY);
 
-	if(fX || fY){
+
+	if(fX !=-1 || fY != -1){
+		cout<<"test failed" << endl;
 		return false;
 	}else{
+		cout<<"test pass" << endl;
 		return true;
 	}
 }
 //FIND DMP NORMAL
-bool findDMPNormal(){
+bool FindDMP_tests::findDMPNormal(){
 	Cartography c;
 	float fX;
 	float fY;
@@ -56,12 +57,14 @@ bool findDMPNormal(){
 	long pos = c.FindDMP("SIO2",0 ,fX,fY);
 
 	if(fX==2 && fY==3 && pos==0){
+		cout<<"test pass" << endl;
 		return true;
 	}else{
+		cout<<"test failed" << endl;
 		return false;
 	}
 }
-bool findDMPNormal2(){
+bool FindDMP_tests::findDMPNormal2(){
 	Cartography c;
 	float fX;
 	float fY;
@@ -74,14 +77,16 @@ bool findDMPNormal2(){
 	long pos = c.FindDMP("SIO2",1 ,fX,fY);
 
 	if(fX==20 && fY==23 && pos==1){
+		cout<<"test pass" << endl;
 		return true;
 	}else{
+		cout<<"test failed" << endl;
 		return false;
 	}
 }
 
 
-bool findDMPNormal3(){
+bool FindDMP_tests::findDMPNormal3(){
 	Cartography c;
 	float fX;
 	float fY;
@@ -94,13 +99,15 @@ bool findDMPNormal3(){
 	long pos = c.FindDMP("SIO2",2 ,fX,fY);
 
 	if(fX==24 && fY==-3 && pos == 2){
+		cout<<"test pass" << endl;
 		return true;
 	}else{
+		cout<<"test failed" << endl;
 		return false;
 	}
 }
 
-bool findDMPNormal4(){
+bool FindDMP_tests::findDMPNormal4(){
 	Cartography c;
 	float fX;
 	float fY;
@@ -113,14 +120,16 @@ bool findDMPNormal4(){
 	long pos = c.FindDMP("SIO2",3 ,fX,fY);
 
 	if(pos == -1){
+		cout<<"test pass" << endl;
 		return true;
 	}else{
+		cout<<"test failed" << endl;
 		return false;
 	}
 }
 
 
-bool findDMPNormal5(){
+bool FindDMP_tests::findDMPNormal5(){
 	Cartography c;
 	float fX;
 	float fY;
@@ -136,14 +145,16 @@ bool findDMPNormal5(){
 	long pos = c.FindDMP("SIO2",3 ,fX,fY);
 
 	if(pos == 5 && fX == 24 && fY==-3){
+		cout<<"test pass" << endl;
 		return true;
 	}else{
+		cout<<"test failed" << endl;
 		return false;
 	}
 }
 
 
-bool findDMPFaux6(){
+bool FindDMP_tests::findDMPFaux6(){
 	Cartography c;
 	float fX;
 	float fY;
@@ -156,8 +167,10 @@ bool findDMPFaux6(){
 	long pos = c.FindDMP("SIo2",0,fX,fY);
 
 	if(pos == -1){
+		cout<<"test pass" << endl;
 		return true;
 	}else{
+		cout<<"test failed" << endl;
 		return false;
 	}
 }

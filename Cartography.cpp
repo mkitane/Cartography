@@ -11,7 +11,6 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
-
 //------------------------------------------------------ Include personnel
 #include "Cartography.h"
 using namespace std;
@@ -101,21 +100,13 @@ char* Cartography::GetData(float x, float y){
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
-/*
-Cartography & Cartography::operator = ( const Cartography & unCartography )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-*/
 
 //-------------------------------------------- Constructeurs - destructeur
-Cartography::Cartography ( )
+Cartography::Cartography ( ) : longueur(0), tab(new Mesure[MAX])
 // Algorithme :
 //
 {
-	longueur = 0;
-	tab = new Mesure [MAX] ;
+	//tab = new Mesure [MAX] ;
 
 #ifdef MAP
     cout << "Appel au constructeur de <Cartography>" << endl;
