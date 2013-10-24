@@ -176,4 +176,34 @@ bool FindDMP_tests::findDMPFaux6(){
 }
 
 
+bool FindDMP_tests::findDMP_test9(){
+	// Test avec 100 000 élèments
+
+	Cartography c;
+	float fX;
+	float fY;
+
+	int x=1;
+	int y=1;
+	for(int i=1; i<100000; i++) {
+		c.Add(x,y,"Test");
+		x++;
+		y++;
+		if(i%10000==0)
+		cout<<i<<endl;
+	}
+	c.Add(2,3,"SIO2");
+
+	long pos = c.FindDMP("SIO2",0,fX,fY);
+
+	if(pos == 100000){
+		cout<<"test pass" << endl;
+		return true;
+	}else{
+		cout<<"test failed" << endl;
+		return false;
+	}
+}
+
+
 //FIND DMP NORMAL AVEC chiffre ngeatifs

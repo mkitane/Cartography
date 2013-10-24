@@ -13,6 +13,7 @@ public:
 	bool findDMPNormal4();
 	bool findDMPNormal5();
 	bool findDMPFaux6();
+	bool findDMP_test9();
 
 };
 
