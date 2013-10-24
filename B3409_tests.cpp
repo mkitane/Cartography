@@ -73,7 +73,7 @@ bool test4() {
 	return false;
 }
 
-bool test4b() {
+bool test5() {
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -88,7 +88,7 @@ bool test4b() {
 	return false;
 }
 
-bool test5() {
+bool test6() {
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -104,7 +104,7 @@ bool test5() {
 	return false;
 }
 
-bool test6() {
+bool test7() {
 	Cartography unecarte;
 	unecarte.Add(0,1,"SiO2");
 	unecarte.Add(2,1,"SiO2");
@@ -118,28 +118,33 @@ bool test6() {
 	return false;
 }
 
-bool test7() {
+bool test8() {
 	Cartography unecarte;
-	unecarte.Add(0,1,"siO2");
-	unecarte.Add(2,1,"SIO2");
-	unecarte.Add(2,5,"SiO2");
-	unecarte.Add(5,3,"Sio2");
-	unecarte.Add(5,5,"sio2");
-	unecarte.Add(10,3,"siO2");
-	unecarte.Add(7,2,"SIO2");
-	unecarte.Add(4,1,"SiO2");
-	if(unecarte.Count("SiO2") == 2) {
-		cout << "Test 7 pass" << endl;
+	for(int i=0; i<100000; i++) {
+		if(i%2=0) {
+			unecarte.Add(i,-i,"O2");
+		}
+		else {
+			unecarte.Add(i,-i,"o2");
+		}
+	}
+	if(unecarte.Count("O2") == 50000) {
+		cout << "Test 8 pass" << endl;
 		return true;
 	}
-	cout << "Test 7 failed" << endl;
-	cout << unecarte.Count("SiO2") << endl;
+	cout << "Test 8 failed" << endl;
+	cout << unecarte.Count("O2") << endl;
 	return false;
 }
 
 
+<<<<<<< HEAD
 bool test8(int nbElements){
 	cout << "Test 3 started--------------------pourNBElements :"<<nbElements << endl;
+=======
+bool test9(){
+	cout << "Test 9 started" << endl;
+>>>>>>> 2cd784e... Ajout test unitaire sensibilité à la casse 3
 	Cartography c;
 	int x=1;
 	int y=1;
