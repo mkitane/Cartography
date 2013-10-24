@@ -187,6 +187,8 @@ bool test9(){
 
 
 }
+
+/*
 int main() {
 
 	test1();
@@ -205,5 +207,5 @@ int main() {
 	test7();
 
 	return 0;
-}
+*/
 

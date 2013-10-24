@@ -1,8 +1,12 @@
-#include "Add_tests.h"
+
+#include <iostream>
+#include "../B3409_class.h"
+
+using namespace std;
 
 
 //Test en conditions normales
-bool Add_tests::test0(){
+bool AddTest0(){
 	Cartography unecarte;
 	for(int i=0;i<50;i++){
 		unecarte.Add(i,i,"test");
@@ -11,7 +15,7 @@ bool Add_tests::test0(){
 
 	return true;
 }
-bool Add_tests::test0b(){
+bool AddTest1(){
 	Cartography unecarte;
 	for(int i=0;i<50;i++){
 		unecarte.Add(rand()%100000,rand()%100000,"test");
@@ -21,7 +25,7 @@ bool Add_tests::test0b(){
 	return true;
 }
 // Teste la vŽrification des doublons
-bool Add_tests::test1() {
+bool AddTest2() {
 	Cartography unecarte;
 	unecarte.Add(0,1,"SiO2");
 	if(!unecarte.Add(0,1,"O2")) {
@@ -33,7 +37,7 @@ bool Add_tests::test1() {
 }
 
 // Teste la limite d'ajout d'1 million
-bool Add_tests::test2() {
+bool AddTest3() {
 	cout << "Test 2 started" << endl;
 	Cartography uneeecarte;
 	int x=1;
@@ -57,7 +61,7 @@ bool Add_tests::test2() {
 
 
 
-bool getData (){
+bool GetDataTest0 (){
 	Cartography c;
 
 	c.Add(1,2,"a");
@@ -78,7 +82,9 @@ bool getData (){
 	return true;
 }
 
-bool getDataFromCartoNull(){
+
+//Get Data From Carto NULL
+bool GetDataTest1(){
 	Cartography c;
 	if(c.GetData(20,30)){
 		return false;
@@ -86,7 +92,9 @@ bool getDataFromCartoNull(){
 
 	return true;
 }
-bool getDataNULL(){
+
+//Get data non existante
+bool GetDataTest2(){
 	Cartography c;
 
 	c.Add(1,2,"a");
