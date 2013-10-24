@@ -9,7 +9,7 @@
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systeme
 #include <iostream>
 //------------------------------------------------------ Include personnel
 #include "B3409_class.h"
@@ -20,7 +20,7 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Methodes publiques
-//bool Cartography::Add(float fX, float fY, char* pszDMP);
+bool Cartography::Add(float fX, float fY, char* pszDMP)
 // Algorithme :
 // Debut Methode
 //
@@ -38,9 +38,7 @@ using namespace std;
 // incrementer la longueur du tableau
 //
 // Fin methode
-bool Cartography::Add(float fX, float fY, char* pszDMP){
-
-
+{
 	if(longueur>=MAX){
 		cout<< "Taille Maxi depassee" << endl;
 		return false;
@@ -59,7 +57,7 @@ bool Cartography::Add(float fX, float fY, char* pszDMP){
 }//----- Fin de Methode
 
 
-//long Cartography::FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
+long Cartography::FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY)
 // Algorithme :
 // Debut Methode
 // Pour i allant de lFirstPos a longueur du tableau
@@ -73,7 +71,7 @@ bool Cartography::Add(float fX, float fY, char* pszDMP){
 // Retourner -1
 //
 //Fin Methode
-long Cartography::FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY){
+{
 	for(int i = lFirstPos; i<longueur ; i++ ){
 		if(compareStrings(pszDMP, tab[i].description)){
 			fX = tab[i].x;
@@ -84,17 +82,18 @@ long Cartography::FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY){
 	return -1;
 }//----- Fin de Methode
 
-//long Cartography::Count();
+long Cartography::Count()
 // Algorithme :
 // Debut Methode
 // 	Retourner longueur tableau
 // Fin Methode
-long Cartography::Count(){
+{
+	sizeOfString("BIJOUR");
 	return longueur;
 }//----- Fin de Methode
 
 
-//long Cartography::Count(char* pszDMP);
+long Cartography::Count(char* pszDMP)
 // Algorithme :
 // Debut Methode
 // size = 0
@@ -105,7 +104,7 @@ long Cartography::Count(){
 // Fin Pour
 // retourner size
 // Fin Methode
-long Cartography::Count(char* pszDMP){
+{
 	int size = 0 ;
 
 	for(int i = 0 ; i < longueur ; i++){
@@ -117,6 +116,7 @@ long Cartography::Count(char* pszDMP){
 	return size;
 }//----- Fin de Methode
 
+void Cartography::Display()
 //void Cartography::Display();
 // Algorithme :
 // Debut Methode
@@ -124,15 +124,14 @@ long Cartography::Count(char* pszDMP){
 //		afficher sur la sortie ecran description de la matiere et ses coordonnes
 // Fin Pour
 // Fin Methode
-//{
-void Cartography::Display(){
+{
 	for(int i=0; i<longueur ;i++){
 		cout<< "Matiere " << tab[i].description << " trouvee a la position : (" << tab[i].x << "," << tab[i].y << ")" << endl;
 	}
 }//----- Fin de Methode
 
 
-//char* Cartography::GetData(float x, float y);
+char* Cartography::GetData(float x, float y)
 // Algorithme :
 // Debut Methode
 // Pour i allant de 0 a longueur du tableau
@@ -143,8 +142,7 @@ void Cartography::Display(){
 //
 // Retourner null sinon
 // Fin Methode
-char* Cartography::GetData(float x, float y){
-
+{
 	for(int i = 0; i<longueur ; i++ ){
 			if(tab[i].x == x && tab[i].y == y)
 				return tab[i].description;
@@ -174,12 +172,9 @@ Cartography::~Cartography ( )
 {
 	delete [] tab;
 
-
 #ifdef MAP
     cout << "Appel au destructeur de <Cartography>" << endl;
 #endif
-
-
 } //----- Fin de ~Cartography
 
 
@@ -191,6 +186,7 @@ int Cartography::sizeOfString(char* string){
 	for(int i=0; string[i];i++){
 		size++;
 	}
+
 	return size;
 }
 
@@ -202,7 +198,7 @@ bool Cartography::compareStrings(char* firstString, char* secondString){
 		return false;
 	}
 
-	for(int i=0; firstString[i];i++){
+	for(int i=0;firstString[i];i++){
 		if(firstString[i] != secondString[i])
 			return false;
 	}

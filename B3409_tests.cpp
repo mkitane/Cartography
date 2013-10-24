@@ -47,14 +47,14 @@ bool test3() {
 	Cartography uneeecarte;
 	int x=1;
 	int y=1;
-	for(int i=0; i<1000000; i++) {
+	for(int i=0; i<20000; i++) {
 		uneeecarte.Add(x,y,"Test");
 		x++;
 		y++;
-		if(i%10000==0)
-		cout<<i<<endl;
+		//if(i%10000==0)
+		//cout<<i<<endl;
 	}
-	cout << "carte creee" << endl;
+	//cout << "carte creee" << endl;
 	if(uneeecarte.Count() == 1000000) {
 		cout << "Test 3 pass" << endl;
 		return true;
@@ -137,15 +137,96 @@ bool test7() {
 	return false;
 }
 
+
+bool test8(){
+	cout << "Test 3 started" << endl;
+	Cartography c;
+	int x=1;
+	int y=1;
+
+	float fX ;
+	float fY;
+	for(int i=0; i<500000; i++) {
+		c.Add(x,y,"Test");
+		x++;
+		y++;
+		//if(i%10000==0)
+		//cout<<i<<endl;
+	}
+	c.Add(x,y,"Test1");
+	x++;
+	y++;
+	c.Add(x,y,"Test1");
+	x++;
+	y++;
+
+	for (int i=0; i<50;i++){
+		c.Add(x,y,"Test2");
+		x++;
+		y++;
+	}
+	//cout << "carte creee" << endl;
+	c.Add(x,y,"Test3");
+	x++;
+	y++;
+	c.Add(x,y,"Test3");
+	x++;
+	y++;
+
+
+
+	time_t seconds_past_epoch = time(0);
+	c.FindDMP("Test1",0, fX, fY);
+	time_t seconds_past_epoch2 = time(0);
+	cout << "Difference en secondes du test1" <<seconds_past_epoch2 - seconds_past_epoch << endl;
+
+	seconds_past_epoch = time(0);
+	c.FindDMP("Test3",0, fX, fY);
+	seconds_past_epoch2 = time(0);
+	cout << "Difference 2 en secondes du test1" <<seconds_past_epoch2 - seconds_past_epoch << endl;
+
+	seconds_past_epoch = time(0);
+	c.FindDMP("Test2",400000, fX, fY);
+	seconds_past_epoch2 = time(0);
+	cout << "Difference 3 en secondes du test1" <<seconds_past_epoch2 - seconds_past_epoch << endl;
+
+
+	seconds_past_epoch = time(0);
+	c.FindDMP("Test2",1400000, fX, fY);
+	seconds_past_epoch2 = time(0);
+	cout << "Difference 4 en secondes du test1" <<seconds_past_epoch2 - seconds_past_epoch << endl;
+
+
+
+	if(c.Count() == 500000) {
+		cout << "Test 3 pass" << endl;
+		return true;
+	}
+
+	cout << "Test 3 failed" << endl;
+	return false;
+
+
+
+}
 int main() {
 
 	test1();
 	test2();
-	//test.test3();
+
+
+	time_t seconds_past_epoch = time(0);
+	test3();
+	time_t seconds_past_epoch2 = time(0);
+
+
+	cout << "Difference en secondes" <<seconds_past_epoch2 - seconds_past_epoch << endl;
 	test4();
 	test5();
 	test6();
 	test7();
+
+	test8();
 
 	return 0;
 }
