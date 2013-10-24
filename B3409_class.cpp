@@ -1,11 +1,11 @@
 /*************************************************************************
                            Cartography  -  description
                              -------------------
-    début                : 11 oct. 2013
+    debut                : 11 oct. 2013
     copyright            : (C) 2013 par kbenhmida
 *************************************************************************/
 
-//---------- Réalisation de la classe <Cartography> (fichier Cartography.cpp) -------
+//---------- Realisation de la classe <Cartography> (fichier Cartography.cpp) -------
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -19,12 +19,25 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- Méthodes publiques
-// type Cartography::Méthode ( liste des paramètres )
+//----------------------------------------------------- Methodes publiques
+//bool Cartography::Add(float fX, float fY, char* pszDMP);
 // Algorithme :
+// Debut Methode
 //
-//{
-//} //----- Fin de Méthode
+// Si longueur du tableau > longueur MAX tableau
+//		retourner faux
+// Fin Si
+//
+// Pour i allant de 0 � longueur du tableau
+//		Si coordonne x de tableau[i] == fX et coordonnee y de tableau[i] == fY
+//			retourner faux
+//		Fin Si
+// Fin Pour
+//
+// Remplir tableau[longueur] avec la mesure passee en parametre
+// incrementer la longueur du tableau
+//
+// Fin methode
 bool Cartography::Add(float fX, float fY, char* pszDMP){
 
 
@@ -43,14 +56,23 @@ bool Cartography::Add(float fX, float fY, char* pszDMP){
 	longueur ++ ;
 
 	return true;
-}
+}//----- Fin de Methode
 
 
-// type Cartography::Méthode ( liste des paramètres )
+//long Cartography::FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
 // Algorithme :
+// Debut Methode
+// Pour i allant de lFirstPos a longueur du tableau
+//		Si pszDMP est egale a description de tab[i]
+//			fX = coordonnee x de tab[i]
+//			fY = coordonnee y de tab[i]
+//			retourner i (position de la mesure dans le tableau)
+//		Fin Si
+// Fin Pour
 //
-//{
-//} //----- Fin de Méthode
+// Retourner -1
+//
+//Fin Methode
 long Cartography::FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY){
 	for(int i = lFirstPos; i<longueur ; i++ ){
 		if(compareStrings(pszDMP, tab[i].description)){
@@ -60,17 +82,29 @@ long Cartography::FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY){
 		}
 	}
 	return -1;
-}
+}//----- Fin de Methode
 
-// type Cartography::Méthode ( liste des paramètres )
+//long Cartography::Count();
 // Algorithme :
-//
-//{
-//} //----- Fin de Méthode
+// Debut Methode
+// 	Retourner longueur tableau
+// Fin Methode
 long Cartography::Count(){
 	return longueur;
-}
+}//----- Fin de Methode
 
+
+//long Cartography::Count(char* pszDMP);
+// Algorithme :
+// Debut Methode
+// size = 0
+// Pour i allant de 0 a longueur du tableau
+//		Si pszDMP == description de tab[i]
+//			incrementer size
+//		Fin Si
+// Fin Pour
+// retourner size
+// Fin Methode
 long Cartography::Count(char* pszDMP){
 	int size = 0 ;
 
@@ -81,14 +115,34 @@ long Cartography::Count(char* pszDMP){
 	}
 
 	return size;
-}
+}//----- Fin de Methode
 
-
+//void Cartography::Display();
+// Algorithme :
+// Debut Methode
+// Pour i allant de 0 a longueur du tableau
+//		afficher sur la sortie ecran description de la matiere et ses coordonnes
+// Fin Pour
+// Fin Methode
+//{
 void Cartography::Display(){
 	for(int i=0; i<longueur ;i++){
 		cout<< "Matiere " << tab[i].description << " trouvee a la position : (" << tab[i].x << "," << tab[i].y << ")" << endl;
 	}
-}
+}//----- Fin de Methode
+
+
+//char* Cartography::GetData(float x, float y);
+// Algorithme :
+// Debut Methode
+// Pour i allant de 0 a longueur du tableau
+//		Si coordonne x de tab[i] == x et coordonnee y de tab[i] == y
+//			retourner description de tab[i]
+//		Fin Si
+// Fin Pour
+//
+// Retourner null sinon
+// Fin Methode
 char* Cartography::GetData(float x, float y){
 
 	for(int i = 0; i<longueur ; i++ ){
@@ -97,17 +151,17 @@ char* Cartography::GetData(float x, float y){
 	}
 
 	return NULL;
-}
+}//----- Fin de Methode
 
-//------------------------------------------------- Surcharge d'opérateurs
+//------------------------------------------------- Surcharge d'operateurs
 
 //-------------------------------------------- Constructeurs - destructeur
 Cartography::Cartography ( ) : longueur(0), tab(new Mesure[MAX])
 // Algorithme :
-//
+//	Definir la valeur de la variable longueur a 0
+//	Affecter au pointeur de tableau un tableau de taille MAX et de type Mesure
 {
 	//tab = new Mesure [MAX] ;
-
 #ifdef MAP
     cout << "Appel au constructeur de <Cartography>" << endl;
 #endif
@@ -116,7 +170,7 @@ Cartography::Cartography ( ) : longueur(0), tab(new Mesure[MAX])
 
 Cartography::~Cartography ( )
 // Algorithme :
-//
+//	Supprimer le tableau cree par un new
 {
 	delete [] tab;
 
@@ -131,7 +185,7 @@ Cartography::~Cartography ( )
 
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- Méthodes protégées
+//----------------------------------------------------- Methodes protegees
 int Cartography::sizeOfString(char* string){
 	int size = 0 ;
 	for(int i=0; string[i];i++){
