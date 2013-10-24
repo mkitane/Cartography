@@ -1,6 +1,6 @@
 #ifndef B3409_TESTS_H_
 #define B3409_TESTS_H_
-#include "Cartography.h"
+#include "B3409_class.h"
 
 class B3409_tests
 {

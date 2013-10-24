@@ -12,7 +12,7 @@
 //-------------------------------------------------------- Include système
 #include <iostream>
 //------------------------------------------------------ Include personnel
-#include "Cartography.h"
+#include "B3409_class.h"
 #include "B3409_tests.h"
 #include "tests/FindDMP_tests.h"
 #include "tests/Add_tests.h"

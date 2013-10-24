@@ -4,14 +4,10 @@
  *  Created on: 24 oct. 2013
  *      Author: Mehdi
  */
-#include "../Cartography.h"
+#include "../B3409_class.h"
 
 
 //ajouter puis compter differents cas
-bool testF1(){
-
-
-}
 
 //Creer /ajouter puis afficher
 

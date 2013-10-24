@@ -12,7 +12,7 @@
 //-------------------------------------------------------- Include système
 #include <iostream>
 //------------------------------------------------------ Include personnel
-#include "Cartography.h"
+#include "B3409_class.h"
 using namespace std;
 
 //------------------------------------------------------------- Constantes

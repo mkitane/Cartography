@@ -1,5 +1,5 @@
 #ifndef ADD_TESTS_H_
-#include "../Cartography.h"
+#include "../B3409_class.h"
 #include <iostream>
 using namespace std;
 #define ADD_TESTS_H_
