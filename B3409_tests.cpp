@@ -17,16 +17,18 @@ using namespace std;
 
 
 bool test1() {
-	Cartography uneecarte;
-	if(uneecarte.Count() == 0) {
-		cout << "Test 1 succeeded" << endl;
+	//Test de Count avec une cartography vide.
+	Cartography unecarte;
+	if(unecarte.Count() == 0) {
+		cout << "TestCount" << endl;
 		return true;
 	}
-	cout << "Test 1 failed" << endl;
+	cout << "TestCount 1 failed" << endl;
 	return false;
 }
 
 bool test2() {
+	//Test de Count normal
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -35,45 +37,48 @@ bool test2() {
 	unecarte.Add(24,12,"Test");
 	unecarte.Add(25,12,"Test");
 	if(unecarte.Count() == 6) {
-		cout << "Test 2 pass" << endl;
+		cout << "TestCount 2 pass" << endl;
 		return true;
 	}
-	cout << "Test 2 failed" << endl;
+	cout << "TestCount 2 failed" << endl;
 	return false;
 }
 
 bool test3() {
-	cout << "Test 3 started" << endl;
-	Cartography uneeecarte;
+	//Test de Count avec 1 million delements ajoutes tous differents.
+	cout << "TestCount 3 started" << endl;
+	Cartography unecarte;
 	int x=1;
 	int y=1;
-	for(int i=0; i<20000; i++) {
-		uneeecarte.Add(x,y,"Test");
+	for(int i=0; i<1000000; i++) {
+		unecarte.Add(x,y,"Test");
 		x++;
 		y++;
 		//if(i%10000==0)
 		//cout<<i<<endl;
 	}
 	//cout << "carte creee" << endl;
-	if(uneeecarte.Count() == 1000000) {
-		cout << "Test 3 pass" << endl;
+	if(unecarte.Count() == 1000000) {
+		cout << "TestCount 3 pass" << endl;
 		return true;
 	}
-	cout << "Test 3 failed" << endl;
+	cout << "TestCount 3 failed" << endl;
 	return false;
 }
 
 bool test4() {
+	//Test de Count avec parametre sur une cartography vide
 	Cartography unecarte;
 	if(unecarte.Count("test") == 0) {
-		cout << "Test 4 pass" << endl;
+		cout << "TestCount 4 pass" << endl;
 		return true;
 	}
-	cout << "Test 4 failed" << endl;
+	cout << "TestCount 4 failed" << endl;
 	return false;
 }
 
 bool test5() {
+	//Test de count pour voir la sensibilite a la casse.
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -81,14 +86,15 @@ bool test5() {
 	unecarte.Add(23,12,"Test");
 
 	if(unecarte.Count("test") == 0) {
-		cout << "Test 4 pass" << endl;
+		cout << "TestCount 5 pass" << endl;
 		return true;
 	}
-	cout << "Test 4 failed" << endl;
+	cout << "TestCount 5 failed" << endl;
 	return false;
 }
 
 bool test6() {
+	//Test de Count avec parametre chaine vide.
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -97,31 +103,33 @@ bool test6() {
 	unecarte.Add(24,12,"Test");
 	unecarte.Add(25,12,"Test");
 	if(unecarte.Count("") == 0) {
-		cout << "Test 5 pass" << endl;
+		cout << "TestCount 6 pass" << endl;
 		return true;
 	}
-	cout << "Test 5 failed" << endl;
+	cout << "TestCount 6 failed" << endl;
 	return false;
 }
 
 bool test7() {
+	//Test de Count avec parametre - Test Normal
 	Cartography unecarte;
 	unecarte.Add(0,1,"SiO2");
 	unecarte.Add(2,1,"SiO2");
 	unecarte.Add(2,5,"O2");
 	unecarte.Add(5,3,"SiO2");
 	if(unecarte.Count("SiO2") == 3) {
-		cout << "Test 6 pass" << endl;
+		cout << "TestCount 7 pass" << endl;
 		return true;
 	}
-	cout << "Test 6 failed" << endl;
+	cout << "TestCount 7 failed" << endl;
 	return false;
 }
 
 bool test8() {
+	//Test de Count avec parametre avec grand nombre d'elements
 	Cartography unecarte;
 	for(int i=0; i<100000; i++) {
-		if(i%2=0) {
+		if(i%2==0) {
 			unecarte.Add(i,-i,"O2");
 		}
 		else {
@@ -129,15 +137,16 @@ bool test8() {
 		}
 	}
 	if(unecarte.Count("O2") == 50000) {
-		cout << "Test 8 pass" << endl;
+		cout << "TestCount 8 pass" << endl;
 		return true;
 	}
-	cout << "Test 8 failed" << endl;
+	cout << "TestCount 8 failed" << endl;
 	cout << unecarte.Count("O2") << endl;
 	return false;
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 bool test8(int nbElements){
 	cout << "Test 3 started--------------------pourNBElements :"<<nbElements << endl;
@@ -188,24 +197,27 @@ bool test9(){
 
 }
 
+=======
+>>>>>>> dc1586e... modifs de commentaires
 /*
 int main() {
 
 	test1();
 	test2();
-
-
-	time_t seconds_past_epoch = time(0);
-	test3();
-	time_t seconds_past_epoch2 = time(0);
-
-
-	cout << "Difference en secondes" <<seconds_past_epoch2 - seconds_past_epoch << endl;
+//	test3();
 	test4();
 	test5();
 	test6();
 	test7();
+	test8();
 
 	return 0;
+<<<<<<< HEAD
 */
 
+=======
+}
+*/
+
+
+>>>>>>> dc1586e... modifs de commentaires
