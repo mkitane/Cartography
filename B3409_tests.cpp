@@ -1,7 +1,7 @@
 /*************************************************************************
                            B3409_tests  -  description
                              -------------------
-    début                : 22 oct. 2013
+    debut                : 22 oct. 2013
     copyright            : (C) 2013 par mkitane
 *************************************************************************/
 
@@ -11,12 +11,12 @@
 //-------------------------------------------------------- Include système
 #include <iostream>
 //------------------------------------------------------ Include personnel
-#include "B3409_tests.h"
+#include "B3409_class.h"
 using namespace std;
 
-// 2 veut dire faux, 1 vrai.
 
-bool B3409_tests::test1() {
+
+bool test1() {
 	Cartography uneecarte;
 	if(uneecarte.Count() == 0) {
 		cout << "Test 1 succeeded" << endl;
@@ -26,7 +26,7 @@ bool B3409_tests::test1() {
 	return false;
 }
 
-bool B3409_tests::test2() {
+bool test2() {
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -41,7 +41,8 @@ bool B3409_tests::test2() {
 	cout << "Test 2 failed" << endl;
 	return false;
 }
-bool B3409_tests::test3() {
+
+bool test3() {
 	cout << "Test 3 started" << endl;
 	Cartography uneeecarte;
 	int x=1;
@@ -62,7 +63,7 @@ bool B3409_tests::test3() {
 	return false;
 }
 
-bool B3409_tests::test4() {
+bool test4() {
 	Cartography unecarte;
 	if(unecarte.Count("test") == 0) {
 		cout << "Test 4 pass" << endl;
@@ -71,7 +72,8 @@ bool B3409_tests::test4() {
 	cout << "Test 4 failed" << endl;
 	return false;
 }
-bool B3409_tests::test4b() {
+
+bool test4b() {
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -85,7 +87,8 @@ bool B3409_tests::test4b() {
 	cout << "Test 4 failed" << endl;
 	return false;
 }
-bool B3409_tests::test5() {
+
+bool test5() {
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -101,7 +104,7 @@ bool B3409_tests::test5() {
 	return false;
 }
 
-bool B3409_tests::test6() {
+bool test6() {
 	Cartography unecarte;
 	unecarte.Add(0,1,"SiO2");
 	unecarte.Add(2,1,"SiO2");
@@ -115,7 +118,7 @@ bool B3409_tests::test6() {
 	return false;
 }
 
-bool B3409_tests::test7() {
+bool test7() {
 	Cartography unecarte;
 	unecarte.Add(0,1,"siO2");
 	unecarte.Add(2,1,"SIO2");
@@ -133,3 +136,17 @@ bool B3409_tests::test7() {
 	cout << unecarte.Count("SiO2") << endl;
 	return false;
 }
+
+int main() {
+
+	test1();
+	test2();
+	//test.test3();
+	test4();
+	test5();
+	test6();
+	test7();
+
+	return 0;
+}
+

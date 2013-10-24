@@ -21,10 +21,12 @@ struct Mesure
 	float y;
 	char* description;
 };
+
+
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Cartography>
-//
-//
+// Role de la classe <Cartography>
+// Cette classe permet de manipuler, c'est � dire chercher, ajouter, gerer
+// des mesures de type DMP.
 //------------------------------------------------------------------------ 
 
 class Cartography
@@ -32,17 +34,53 @@ class Cartography
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste des paramètres );
+//----------------------------------------------------- Methodes publiques
+    // bool Add (float fX, float fY, char* pszDMP);
     // Mode d'emploi :
-    //
+    //	Methode qui permet de rajouter une mesure DMP a la classe.
     // Contrat :
-    //
+    //  Ne pas donner des coordonnees fX et fY
 	bool Add(float fX, float fY, char* pszDMP);
+
+
+
+	//long Count();
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
 	long Count();
+
+
+
+	//long Count(char* pszDMP);
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
 	long Count(char* pszDMP);
+
+	//long FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
 	long FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
+
+
+	//void Display();
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
 	void Display();
+
+
+	//char* GetData(float x, float y);
+	// Mode d'emploi :
+	//
+	// Contrat :
+	//
 	char* GetData(float x, float y);
 
 

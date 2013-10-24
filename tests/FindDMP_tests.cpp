@@ -7,13 +7,13 @@ using namespace std;
 //FIND DMP FROM CARTO VIDE
 bool FindDMP_tests::findDMPFromCartoVide(){
 	Cartography c;
-	float fX = -1;
-	float fY = -1;
+	float fX;
+	float fY;
 
 	long int firstPos = 0;
-	c.FindDMP("SIO2",firstPos ,fX,fY);
+	firstPos = c.FindDMP("SIO2",firstPos ,fX,fY);
 
-	if(fX != -1 || fY != -1 ){
+	if(firstPos != -1 ){
 		cout<<"test failed" << endl;
 		return false;
 	}else{
