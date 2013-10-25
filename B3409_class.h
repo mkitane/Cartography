@@ -35,35 +35,32 @@ class Cartography
 
 public:
 //----------------------------------------------------- Methodes publiques
-    // bool Add (float fX, float fY, char* pszDMP);
+	bool Add(float fX, float fY, char* pszDMP);
     // Mode d'emploi :
     //	Methode qui permet de rajouter une mesure DMP a la classe.
     // Contrat :
     //  -Ne pas ajouter un point dont les coordonnees fX et fY ont deja
 	// ete rajoutee a la classe.
 	//	-Ne pas ajouter plus d'un million d'elements.
-	bool Add(float fX, float fY, char* pszDMP);
 
 
 
-	//long Count();
+	long Count();
 	// Mode d'emploi :
 	//	Compte et renvoie le nombre de mesures stockees au sein de la classe.
 	// Contrat :
 	//
-	long Count();
 
 
 
-	//long Count(char* pszDMP);
+	long Count(char* pszDMP);
 	// Mode d'emploi :
 	//	Compte et renvoie le nombre de mesures ayant pour description le
 	// char* passe en parametre.
 	// Contrat :
 	//
-	long Count(char* pszDMP);
 
-	//long FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
+	long FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
 	// Mode d'emploi :
 	//	Renvoie la position dans notre tableau du premier element ayant pour
 	//  description la chaine de caracteres pszDMP.
@@ -72,24 +69,21 @@ public:
 	//  pszDMP.
 	// Contrat :
 	//
-	long FindDMP(char* pszDMP, long lFirstPos, float& fX, float& fY);
 
 
-	//void Display();
+	void Display();
 	// Mode d'emploi :
 	//	Affiche tous les elements DMP stockes dans le tableau de la classe.
 	// Contrat :
 	//
-	void Display();
 
 
-	//char* GetData(float x, float y);
+	char* GetData(float x, float y);
 	// Mode d'emploi :
 	//	Recupere la description de lelement ayant pour coordonnees, les coordonnees
 	//  passes en parametre.
 	// Contrat :
 	//
-	char* GetData(float x, float y);
 
 
 //------------------------------------------------- Surcharge d'operateurs
