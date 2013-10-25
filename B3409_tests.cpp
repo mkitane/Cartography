@@ -28,7 +28,7 @@ bool test1() {
 }
 
 bool test2() {
-	//Test de Count normal
+	//Test de Count en conditions normales
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -78,7 +78,7 @@ bool test4() {
 }
 
 bool test5() {
-	//Test de count pour voir la sensibilite a la casse.
+	//Test de sensibilite a la casse.
 	Cartography unecarte;
 	unecarte.Add(20,12,"Test");
 	unecarte.Add(21,12,"Test");
@@ -126,7 +126,7 @@ bool test7() {
 }
 
 bool test8() {
-	//Test de Count avec parametre avec grand nombre d'elements
+	//T-8 : Test de sensibilité à la casse 2
 	Cartography unecarte;
 	for(int i=0; i<100000; i++) {
 		if(i%2==0) {

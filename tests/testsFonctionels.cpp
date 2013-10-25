@@ -117,7 +117,9 @@ bool testf5() {
     return false;
 }
 
-bool testf6(int nbElements){
+
+/*
+void testf6(int nbElements){
 	//Test Qui permet devaluer les performances de la methode FINDDMP
 	//en fonction du nombre Delements sur lesquels il doit rechercher
 	//et passe en parametre
@@ -146,28 +148,50 @@ bool testf6(int nbElements){
 	c.FindDMP("Test1",0, fX, fY);
 	t2 = clock();
 	float diff = (((float)t2 - (float)t1) / 1000000.0F ) * 1000;
-	cout << "Difference en secondes pour nbElements :" << nbElements<< "du Test1: " <<diff << endl;
+	cout << "Difference en mssecondes pour nbElements :" << nbElements<< "du Test1: " <<diff << endl;
 
 	t1 = clock();
 	c.FindDMP("Test3",0, fX, fY);
 	t2 = clock();
 	diff = (((float)t2 - (float)t1) / 1000000.0F ) * 1000;
-	cout << "Difference en secondes pour nbElements :" << nbElements<< "du Test3: " <<diff << endl;
+	cout << "Difference en mssecondes pour nbElements :" << nbElements<< "du Test3: " <<diff << endl;
 
-	cout << "Test 6 ENDED--------------------pourNBElements :"<<nbElements << endl;
+	cout << "Test 6 ended--------------------pourNBElements :"<<nbElements << endl;
 
-	return true;
 }
+
+void testf7(int nbElements){
+	cout << "Test 7 started--------------------pourNBElements :"<<nbElements << endl;
+	Cartography c;
+	int x=1;
+	int y=1;
+	clock_t t1, t2;
+
+	t1 = clock();
+	for(int i=0; i<nbElements; i++) {
+		c.Add(x,y,"Test");
+		x++;
+		y++;
+	}
+	t2 = clock();
+
+	float diff = (((float)t2 - (float)t1) / 1000000.0F ) * 1000;
+	cout << "Difference en mssecondes pour nbElements :" << nbElements<< "du Test7: " <<diff << endl;
+
+}
+
+*/
+
+
 /*
 int main(){
+
 	testf1();
 	testf2();
 	testf3();
 	testf4();
 	testf5();
 
-	testf6(50000);
-	testf6(100000);
-	testf6(1000);
 }
 */
+
