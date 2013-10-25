@@ -51,7 +51,7 @@ bool Cartography::Add(float fX, float fY, char* pszDMP)
 
 	Mesure m = {fX,fY,pszDMP};
 	tab[longueur] = m;
-	longueur ++ ;
+	longueur ++;
 
 	return true;
 }//----- Fin de Methode
@@ -88,7 +88,6 @@ long Cartography::Count()
 // 	Retourner longueur tableau
 // Fin Methode
 {
-	sizeOfString("BIJOUR");
 	return longueur;
 }//----- Fin de Methode
 
@@ -126,7 +125,7 @@ void Cartography::Display()
 // Fin Methode
 {
 	for(int i=0; i<longueur ;i++){
-		cout<< "Matiere " << tab[i].description << " trouvee a la position : (" << tab[i].x << "," << tab[i].y << ")" << endl;
+		cout<< "Matiere " << tab[i].description << " en : (" << tab[i].x << "," << tab[i].y << ")" << endl;
 	}
 }//----- Fin de Methode
 

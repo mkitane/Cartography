@@ -192,6 +192,8 @@ int main(){
 	testf4();
 	testf5();
 
+	return 0;
+
 }
 */
 

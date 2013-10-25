@@ -71,10 +71,36 @@ bool GetDataTest2(){
 
 }
 
+
+bool GetDataTest3(){
+	//Get data d'une data avec virgule
+	Cartography c;
+
+	c.Add(1.23,2,"axD");
+	c.Add(3,20.4,"bxD");
+	c.Add(71,62,"c");
+	c.Add(1,62,"a");
+	c.Add(-12,243,"b");
+	c.Add(12,-243,"c");
+	c.Add(12.558,-243.994393,"deof");
+	c.Add(-12,243,"e");
+
+
+	cout<<c.GetData(1.23,2)<<endl;
+	cout<<c.GetData(3,20.4)<<endl;
+	cout<<c.GetData(12.558,-243.994393) << endl;
+
+	return true;
+
+}
 /*
 int main(){
 	GetDataTest0();
 	GetDataTest1();
 	GetDataTest2();
-}
-*/
+	GetDataTest3();
+
+	return 0;
+
+}*/
+

@@ -222,8 +222,62 @@ bool FindDMPTest8(){
 	}
 }
 
+bool FindDMPTest9(){
+	//Test effectue sur moodle
+	Cartography cart;
+	cart.Add(124.5, 60, "h2o");
+	cart.Add(128, 45789.54, "SiO2");
+	cart.Add(124.6, 60, "h2o");
+	cart.Add(300, -456.2, "SiO2");
+
+
+	long lPos;
+	float fX;
+	float fY;
+
+
+	float fXattendu1 = 128;
+	float fYattendu1 = 45789.54;
+
+	lPos = cart.FindDMP("SiO2",0,fX,fY);
+	// lPos == 1
+	// fX == 128
+	// fY == 45789.54
+	if(!(lPos ==1 && fX == fXattendu1 && fY == fYattendu1) ){
+		cout << lPos << ":::" << fX << ":::" << fY << endl;
+		cout << "Test 9a Fail" << endl;
+	}else{
+		cout << "Test 9a Pass" << endl;
+	}
+
+
+	lPos = cart.FindDMP("SiO2",lPos+1,fX,fY);
+	// lPos == 3
+	// fX == 300
+	// fY == -456.2
+	if(!(lPos ==3 && fX == 300 && fY == -456.2f) ){
+		cout << lPos << ":::" << fX << ":::" << fY << endl;
+		cout << "Test 9b Fail" << endl;
+	}else{
+		cout << "Test 9b Pass" << endl;
+	}
+
+	lPos = cart.FindDMP("SiO2",lPos+1,fX,fY);
+	// lPos == -1
+	if(lPos != -1){
+		cout << lPos << ":::" << fX << ":::" << fY << endl;
+		cout << "Test 9c Fail" << endl;
+	}else{
+		cout << "Test 9c Pass" << endl;
+	}
+
+
+	cout<<"Test 9 Pass" << endl;
+	return true;
+}
 /*
 int main(){
+
 	FindDMPTest0();
 	FindDMPTest1();
 	FindDMPTest2();
@@ -233,5 +287,13 @@ int main(){
 	FindDMPTest6();
 	FindDMPTest7();
 	FindDMPTest8();
+
+	FindDMPTest9();
+
+	return 0;
+
 }
 */
+
+
+

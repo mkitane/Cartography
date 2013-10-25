@@ -71,11 +71,59 @@ bool AddTest3() {
 	return false;
 }
 
+bool AddTest4(){
+	// Teste la vérification des doublons avec virgule
+	Cartography unecarte;
+	unecarte.Add(0.9832,1.003502987,"SiO2");
+	if(!unecarte.Add(0.9832,1.003502987,"O2")) {
+		cout << "AddTest 4 pass" << endl;
+		return true;
+	}
+	cout << "AddTest 4 failed" << endl;
+	return false;
+}
+
+bool AddTest5(){
+	// Teste la vérification des doublons avec virgule
+	//On donne deux valeurs differentes, il devrait les rajouter tous les deux
+
+	Cartography unecarte;
+	unecarte.Add(0.983,1.0350298,"SiO2");
+	if(!unecarte.Add(0.983,1.035029,"O2")) {
+		cout << "AddTest 5 fail" << endl;
+		return false;
+	}
+	cout << "AddTest 5 pass" << endl;
+	return true;
+}
+
+bool AddTest6(){
+	// Teste la vérification des doublons avec virgule
+	//On donne deux valeurs differentes, il devrait les rajouter tous les deux
+	Cartography unecarte;
+	unecarte.Add(10.92,-50.3891,"SiO2");
+	if(!unecarte.Add(10.92,-50.389,"SiO2")) {
+		cout << "AddTest 6 fail" << endl;
+		return false;
+	}
+	cout << "AddTest 6 pass" << endl;
+
+	unecarte.Display();
+	return true;
+}
+
 /*
 int main(){
 	AddTest0();
 	AddTest1();
 	AddTest2();
 	//AddTest3();
+	AddTest4();
+	AddTest5();
+	AddTest6();
+
+	return 0;
+
 }
 */
+
