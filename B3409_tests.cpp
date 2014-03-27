@@ -50,7 +50,7 @@ bool test3() {
 	Cartography unecarte;
 	int x=1;
 	int y=1;
-	for(int i=0; i<1000000; i++) {
+	for(int i=0; i<10000; i++) {
 		unecarte.Add(x,y,"Test");
 		x++;
 		y++;
@@ -58,7 +58,7 @@ bool test3() {
 		//cout<<i<<endl;
 	}
 	//cout << "carte creee" << endl;
-	if(unecarte.Count() == 1000000) {
+	if(unecarte.Count() == 10000) {
 		cout << "TestCount 3 pass" << endl;
 		return true;
 	}
@@ -146,14 +146,8 @@ bool test8() {
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 bool test8(int nbElements){
-	cout << "Test 3 started--------------------pourNBElements :"<<nbElements << endl;
-=======
-bool test9(){
-	cout << "Test 9 started" << endl;
->>>>>>> 2cd784e... Ajout test unitaire sensibilité à la casse 3
 	Cartography c;
 	int x=1;
 	int y=1;
@@ -197,9 +191,7 @@ bool test9(){
 
 }
 
-=======
->>>>>>> dc1586e... modifs de commentaires
-/*
+
 int main() {
 
 	test1();
@@ -213,12 +205,4 @@ int main() {
 	test3();
 
 	return 0;
-<<<<<<< HEAD
-*/
-
-=======
 }
-*/
-
-
->>>>>>> dc1586e... modifs de commentaires
